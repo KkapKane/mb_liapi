@@ -1,4 +1,4 @@
-import {Bodies, Engine, Render, World} from 'matter-js'
+import {Bodies, Engine, Events, Render, World} from 'matter-js'
 import {useEffect, useRef} from 'react'
 import { Country } from './Country'
 // import worldMap from "../assets/world.svg"
@@ -27,9 +27,20 @@ Engine.run(engine.current);
 
     const canvas = canvasRef.current!;
 engine.current.world.gravity.scale = 0
+    for(let i = 0; i < 1; i++) {
 
-    new Country( 800, 400, engine.current.world)
+      new Country(800 + (i * 200), 400, engine.current)
+    }
 
+  function handleAddShape(event: MouseEvent) {
+    const canvasRect = canvas.getBoundingClientRect();
+    const mouseX = event.clientX - canvasRect.left
+    const mouseY = event.clientY - canvasRect.top
+    console.log("ya")
+      new Country(mouseX, mouseY, engine.current)
+  }
+
+  canvas.addEventListener("click", handleAddShape)
      return () => {
       Render.stop(render);
       World.clear(engine.current.world, false);
