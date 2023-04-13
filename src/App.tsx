@@ -8,8 +8,8 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar />
-      <Rankbar />
+      {/* <Sidebar /> */}
+      {/* <Rankbar /> */}
       <Canvas />
     </div>
   )

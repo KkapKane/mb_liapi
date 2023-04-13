@@ -12,9 +12,8 @@ import {
 } from "matter-js";
 import { useEffect, useRef, useState } from "react";
 import { Country } from "./Country";
-// import worldMap from "../assets/world.svg"
-import bg from "../assets/bluemap.png"
 import { Octagon } from "./Octagon";
+// import worldMap from "../assets/world.svg"
 
 export default function Canvas(): JSX.Element {
   const boxRef = useRef<HTMLDivElement>(null);
@@ -57,13 +56,13 @@ export default function Canvas(): JSX.Element {
         
       }
     });
-    const newCountry = new Country(-100, 280, 1, engine.current);
-    new Country(900, 360, .3, engine.current);
-    new Country(500, 260, .7, engine.current);
-    new Country(500, 460, .8, engine.current);
-    new Country(1000, 660, .8, engine.current);
-    new Country(700, 160, 1.8, engine.current);
-    setCountry(newCountry);
+    // const newCountry = new Country(-100, 280, 1, engine.current);
+    // new Country(900, 360, .3, engine.current);
+    // new Country(500, 260, .7, engine.current);
+    // new Country(500, 460, .8, engine.current);
+    // new Country(1000, 660, .8, engine.current);
+    // new Country(700, 160, 1.8, engine.current);
+    // setCountry(newCountry);
     // function handleAddShape(event: MouseEvent) {
     //   const canvasRect = canvas.getBoundingClientRect();
     //   const mouseX = event.clientX - canvasRect.left
@@ -133,7 +132,7 @@ export default function Canvas(): JSX.Element {
     });
 
     //octagon TEST
-    // new Octagon(500,500, 100, engine.current)
+    new Octagon(500,500, 200, engine.current)
 
     return () => {
       Render.stop(render);
